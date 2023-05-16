@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class ProductCheckoutEndToEndTest  extends BaseTest
+public class ProductCheckoutEndToEndTest extends BaseTest
 {
     LoginPage loginpg = new LoginPage();
 
@@ -27,7 +27,7 @@ public class ProductCheckoutEndToEndTest  extends BaseTest
         completepage.goToHomePage();
     }
 
-    //Checkout all items on page
+    //Checkout all items on products page
     @Test
     public void AllProductsTest()
     {
