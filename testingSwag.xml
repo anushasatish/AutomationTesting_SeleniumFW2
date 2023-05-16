@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Swag Suite">
+
+ <listeners>
+   <listener class-name="listeners.FWListener"></listener>
+ </listeners>
+
+    <test name= "SwagTest">
+
+        <classes>
+            <class name="SwagLabsTests.LoginPageTest">
+                <methods>
+                    <include name="LoginTest"/>
+                    <include name="PageTitleTest"/>
+                </methods>
+            </class>
+            <class name="SwagLabsTests.CheckoutInformationTest">
+                <methods>
+                    <include name="MandatoryUserInfo"/>
+                </methods>
+            </class>
+            <class name="SwagLabsTests.ProductCheckoutEndToEndTest">
+                <methods>
+                    <include name="SingleProductTest"/>
+                    <include name="AllProductsTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
