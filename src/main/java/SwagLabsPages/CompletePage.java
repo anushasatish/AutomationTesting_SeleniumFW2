@@ -20,7 +20,8 @@ public class CompletePage extends BasePage
 
     }
 
-    public LoginPage goToHomePage() {
+    public LoginPage goToHomePage()
+    {
         click(backhomelOCATOR);
         return new LoginPage();
     }

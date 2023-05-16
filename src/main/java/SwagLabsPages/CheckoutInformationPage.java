@@ -3,6 +3,7 @@ package SwagLabsPages;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.json.JsonOutput;
 import util.ReporterUtil;
 import util.ScreenShotUtil;
 
@@ -19,7 +20,6 @@ public class CheckoutInformationPage extends BasePage
     By postalCodeLocator = By.xpath("//*[contains(@placeholder,'Postal')]");
     By continueLocator = By.xpath("//*[contains(@value,'Continue')]");
     By finishLocator = By.xpath("//button[contains(.,'Finish')]");
-    By productsFromTable = By.xpath("//a//div[@class='inventory_item_name']");
 
 
     public CompletePage enterInfo()
@@ -49,15 +49,15 @@ public class CheckoutInformationPage extends BasePage
         return new CompletePage();
     }
 
-    /* public List<String> getProductsFromTable()
+
+
+    public ConfirmationPage enterInfo2()
     {
-        List <WebElement> products = getDriver().findElements(productsFromTable);
-        List <String> productsFromTable = new ArrayList<>();
-        for(WebElement product : products)
-        {
-            productsFromTable.add(product.getText());
-        }
-        return productsFromTable;
-    }*/
+        sendKeys(firstnameLocator, "anu ");
+        sendKeys(lastNameLocator, "deep");
+        sendKeys(postalCodeLocator, "nmnm02");
+        click(continueLocator);
+        return new ConfirmationPage();
+    }
 
 }

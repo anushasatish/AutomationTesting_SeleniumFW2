@@ -1,9 +1,12 @@
 package SwagLabsTests;
 
-import SwagLabsPages.CheckoutInformationPage;
 import SwagLabsPages.CompletePage;
+import SwagLabsPages.ConfirmationPage;
 import SwagLabsPages.LoginPage;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import org.testng.annotations.Test;
+import util.ReporterUtil;
+import util.ScreenShotUtil;
 
 import java.util.List;
 
@@ -39,6 +42,24 @@ public class ProductCheckoutEndToEndTest extends BaseTest
 
         System.out.println(completepage.getHeaderMessage());
         completepage.goToHomePage();
+    }
+
+    //To get a list of the products selected
+    @Test
+    public void ProductList()
+    {
+        loginpg.navigateToLoginPage();
+
+        ConfirmationPage confirmationPage = loginpg.login()
+                .allItemsCheckout()
+                .enterInfo2();
+        confirmationPage.getProductsFromTable();
+
+        String sauce = ScreenShotUtil.takeScreenshot();
+        ReporterUtil.getTest().info( MediaEntityBuilder.createScreenCaptureFromBase64String(sauce).build());
+
+        List<String> actualprodfromtable = confirmationPage.getProductsFromTable();
+        System.out.print("The products selected are :: " +actualprodfromtable);
     }
 
 }

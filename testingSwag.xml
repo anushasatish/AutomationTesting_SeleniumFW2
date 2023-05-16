@@ -24,6 +24,7 @@
                 <methods>
                     <include name="SingleProductTest"/>
                     <include name="AllProductsTest"/>
+                    <include name="ProductList"/>
                 </methods>
             </class>
         </classes>
