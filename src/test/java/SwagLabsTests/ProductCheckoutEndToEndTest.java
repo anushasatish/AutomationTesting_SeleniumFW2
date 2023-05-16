@@ -58,8 +58,8 @@ public class ProductCheckoutEndToEndTest extends BaseTest
         String sauce = ScreenShotUtil.takeScreenshot();
         ReporterUtil.getTest().info( MediaEntityBuilder.createScreenCaptureFromBase64String(sauce).build());
 
-        List<String> actualprodfromtable = confirmationPage.getProductsFromTable();
-        System.out.print("The products selected are :: " +actualprodfromtable);
+        List<String> actualProdFromtable = confirmationPage.getProductsFromTable();
+        System.out.print("The products selected are :: " +actualProdFromtable);
     }
 
 }
